@@ -1,23 +1,17 @@
-package militar.rangos;
+package modelo.militar.rangos;
 
 import modelo.militar.soldados.Rango;
 
-public class Coronel extends Rango {
+public class SoldadoRaso extends Rango {
 
-    String estrategia;
 
-    public Coronel(String nombre, String id, String rango, int nivel) {
+    public SoldadoRaso(String nombre, String id, String rango, int nivel) {
         super(nombre, id, rango, nivel);
     }
 
     @Override
     public void realizarAccion() {
-
-    }
-
-    @Override
-    public void saludar(String nombre, String saludo) {
-        super.saludar(nombre, saludo);
+        String accion = "Ejecutar las operaciones básicas de vigilancia y seguridad.";
     }
 
     @Override

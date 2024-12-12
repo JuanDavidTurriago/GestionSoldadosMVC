@@ -1,4 +1,4 @@
-package militar;
+package modelo.militar;
 
 public interface OperacionesMilitares {
 

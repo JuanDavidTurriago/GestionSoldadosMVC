@@ -1,4 +1,4 @@
-package militar.soldados;
+package modelo.militar.soldados;
 
 import modelo.militar.OperacionesMilitares;
 

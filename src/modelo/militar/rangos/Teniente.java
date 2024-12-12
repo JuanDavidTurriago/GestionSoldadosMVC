@@ -1,4 +1,4 @@
-package militar.rangos;
+package modelo.militar.rangos;
 
 import modelo.militar.soldados.Rango;
 
