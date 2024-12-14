@@ -9,10 +9,10 @@ import java.awt.event.ActionListener;
 public class VentanaPrincipal extends javax.swing.JFrame {
 
     Crear crear = new Crear();
-    Modificar m = new Modificar();
-    AsignarM as = new AsignarM();
-    ModificarEstado rp = new ModificarEstado();
-    Acciones ac = new Acciones();
+    Modificar modificar = new Modificar();
+    AsignarM asignarMision = new AsignarM();
+    ModificarEstado asignarEstado = new ModificarEstado();
+    Acciones acciones = new Acciones();
 
     public VentanaPrincipal() {
         initComponents();
@@ -56,13 +56,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel2.setText("RANGO:");
 
         jComboBoxRango.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "Soldado raso", "Teniente", "Capitan", "Coronel" }));
-
-        jComboBoxRango.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -191,46 +184,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jButtonResetAll.setBackground(new java.awt.Color(169, 0, 0));
         jButtonResetAll.setForeground(new java.awt.Color(255, 255, 255));
         jButtonResetAll.setText("RESET ALL");
-        jButtonResetAll.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
         jButtonCrear.setText("Crear");
-        jButtonCrear.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
         jButtonModificar.setText("Modificar");
-        jButtonModificar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
         jButtonAsignarMision.setText("Asignar misión");
-        jButtonAsignarMision.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-
         jButtonAsignarEstado.setText("Asignar Estado");
-        jButtonAsignarEstado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-
         jButtonAcciones.setText("Acciones");
-        jButtonAcciones.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
+
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -290,11 +249,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
 
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-    }
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
+    public void mostrarCrear(){
         crear.setSize(567,271);
         crear.setLocation(0,0);
 
@@ -304,49 +259,78 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanelPrincipal.repaint();
     }
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
-        m.setSize(567,271);
-        m.setLocation(0,0);
+    public void mostrarModificar(){
+        modificar.setSize(567,271);
+        modificar.setLocation(0,0);
 
         jPanelPrincipal.removeAll();
-        jPanelPrincipal.add(m,BorderLayout.CENTER);
+        jPanelPrincipal.add(modificar,BorderLayout.CENTER);
         jPanelPrincipal.revalidate();
         jPanelPrincipal.repaint();
     }
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {
-        as.setSize(567,271);
-        as.setLocation(0,0);
+    public void mostrarAsignarMision(){
+        asignarMision.setSize(567,271);
+        asignarMision.setLocation(0,0);
 
         jPanelPrincipal.removeAll();
-        jPanelPrincipal.add(as,BorderLayout.CENTER);
+        jPanelPrincipal.add(asignarMision,BorderLayout.CENTER);
+        jPanelPrincipal.revalidate();
+        jPanelPrincipal.repaint();
+
+    }
+
+    public void mostrarAsignarEstado(){
+        asignarEstado.setSize(567,271);
+        asignarEstado.setLocation(0,0);
+
+        jPanelPrincipal.removeAll();
+        jPanelPrincipal.add(asignarEstado,BorderLayout.CENTER);
+        jPanelPrincipal.revalidate();
+        jPanelPrincipal.repaint();
+
+    }
+
+    public void mostrarAcciones() {
+        acciones.setSize(567, 271);
+        acciones.setLocation(0, 0);
+
+        jPanelPrincipal.removeAll();
+        jPanelPrincipal.add(acciones, BorderLayout.CENTER);
         jPanelPrincipal.revalidate();
         jPanelPrincipal.repaint();
     }
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {
-        rp.setSize(567,271);
-        rp.setLocation(0,0);
 
-        jPanelPrincipal.removeAll();
-        jPanelPrincipal.add(rp,BorderLayout.CENTER);
-        jPanelPrincipal.revalidate();
-        jPanelPrincipal.repaint();
+    public void resetAll(){
+
+
     }
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {
-        ac.setSize(567,271);
-        ac.setLocation(0,0);
-
-        jPanelPrincipal.removeAll();
-        jPanelPrincipal.add(ac,BorderLayout.CENTER);
-        jPanelPrincipal.revalidate();
-        jPanelPrincipal.repaint();
+    public void rango(){
     }
 
 
+    public void setControlador(ActionListener controlador) {
+        jButtonCrear.setActionCommand("Crear");
+        jButtonCrear.addActionListener(controlador);
 
+        jButtonModificar.setActionCommand("Modificar");
+        jButtonModificar.addActionListener(controlador);
 
+        jButtonAsignarMision.setActionCommand("AsignarMision");
+        jButtonAsignarMision.addActionListener(controlador);
+
+        jButtonAsignarEstado.setActionCommand("AsignarEstado");
+        jButtonAsignarEstado.addActionListener(controlador);
+
+        jButtonAcciones.setActionCommand("Acciones");
+        jButtonAcciones.addActionListener(controlador);
+
+        jComboBoxRango.setActionCommand("Rango");
+        jComboBoxRango.addActionListener(controlador);
+
+    }
     // Variables declaration - do not modify
     private javax.swing.JPanel jPanelPrincipal;
     private javax.swing.JButton jButtonResetAll;
