@@ -4,7 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 
 public class VentanaPrincipal extends javax.swing.JFrame {
@@ -24,24 +23,24 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBoxRango = new javax.swing.JComboBox<>();
         jPanel2 = new javax.swing.JPanel();
         jScrollBar1 = new javax.swing.JScrollBar();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        Principal = new javax.swing.JPanel();
+        jPanelPrincipal = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        jButtonResetAll = new javax.swing.JButton();
+        jButtonCrear = new javax.swing.JButton();
+        jButtonModificar = new javax.swing.JButton();
+        jButtonAsignarMision = new javax.swing.JButton();
+        jButtonAsignarEstado = new javax.swing.JButton();
+        jButtonAcciones = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,9 +55,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("RANGO:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "Soldado raso", "Teniente", "Capitan", "Coronel" }));
+        jComboBoxRango.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "Soldado raso", "Teniente", "Capitan", "Coronel" }));
 
-        jComboBox1.addActionListener(new ActionListener() {
+        jComboBoxRango.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
@@ -73,7 +72,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                                 .addGap(36, 36, 36)
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jComboBoxRango, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(42, 42, 42))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(28, 28, 28)
@@ -88,7 +87,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(jLabel2)
-                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jComboBoxRango, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(27, 27, 27))
         );
 
@@ -178,8 +177,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                                 .addGap(34, 34, 34))
         );
 
-        javax.swing.GroupLayout PrincipalLayout = new javax.swing.GroupLayout(Principal);
-        Principal.setLayout(PrincipalLayout);
+        javax.swing.GroupLayout PrincipalLayout = new javax.swing.GroupLayout(jPanelPrincipal);
+        jPanelPrincipal.setLayout(PrincipalLayout);
         PrincipalLayout.setHorizontalGroup(
                 PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -189,45 +188,45 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jButton1.setBackground(new java.awt.Color(169, 0, 0));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("RESET ALL");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonResetAll.setBackground(new java.awt.Color(169, 0, 0));
+        jButtonResetAll.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonResetAll.setText("RESET ALL");
+        jButtonResetAll.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Crear");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButtonCrear.setText("Crear");
+        jButtonCrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Modificar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jButtonModificar.setText("Modificar");
+        jButtonModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Asignar misión");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAsignarMision.setText("Asignar misión");
+        jButtonAsignarMision.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
 
-        jButton5.setText("Asignar Estado");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAsignarEstado.setText("Asignar Estado");
+        jButtonAsignarEstado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
 
-        jButton6.setText("Acciones");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAcciones.setText("Acciones");
+        jButtonAcciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
             }
@@ -246,21 +245,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addGroup(layout.createSequentialGroup()
-                                                                .addComponent(jButton2)
+                                                                .addComponent(jButtonCrear)
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                                .addComponent(jButton3)
+                                                                .addComponent(jButtonModificar)
                                                                 .addGap(18, 18, 18)
-                                                                .addComponent(jButton4)
+                                                                .addComponent(jButtonAsignarMision)
                                                                 .addGap(18, 18, 18)
-                                                                .addComponent(jButton5)
+                                                                .addComponent(jButtonAsignarEstado)
                                                                 .addGap(18,18,18)
-                                                                .addComponent(jButton6)
+                                                                .addComponent(jButtonAcciones)
                                                                 .addGap(0, 0, Short.MAX_VALUE))
                                                         .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(Principal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                                        .addComponent(jPanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jButtonResetAll, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(222, 222, 222))))
         );
         layout.setVerticalGroup(
@@ -272,17 +271,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                                                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(jButton2)
-                                                        .addComponent(jButton3)
-                                                        .addComponent(jButton4)
-                                                        .addComponent(jButton5)
-                                                        .addComponent(jButton6))))
+                                                        .addComponent(jButtonCrear)
+                                                        .addComponent(jButtonModificar)
+                                                        .addComponent(jButtonAsignarMision)
+                                                        .addComponent(jButtonAsignarEstado)
+                                                        .addComponent(jButtonAcciones))))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
-                                                .addComponent(Principal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jPanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jButtonResetAll, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(15, 15, 15))
                                         .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
@@ -299,64 +298,64 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         crear.setSize(567,271);
         crear.setLocation(0,0);
 
-        Principal.removeAll();
-        Principal.add(crear,BorderLayout.CENTER);
-        Principal.revalidate();
-        Principal.repaint();
+        jPanelPrincipal.removeAll();
+        jPanelPrincipal.add(crear,BorderLayout.CENTER);
+        jPanelPrincipal.revalidate();
+        jPanelPrincipal.repaint();
     }
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
         m.setSize(567,271);
         m.setLocation(0,0);
 
-        Principal.removeAll();
-        Principal.add(m,BorderLayout.CENTER);
-        Principal.revalidate();
-        Principal.repaint();
+        jPanelPrincipal.removeAll();
+        jPanelPrincipal.add(m,BorderLayout.CENTER);
+        jPanelPrincipal.revalidate();
+        jPanelPrincipal.repaint();
     }
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {
         as.setSize(567,271);
         as.setLocation(0,0);
 
-        Principal.removeAll();
-        Principal.add(as,BorderLayout.CENTER);
-        Principal.revalidate();
-        Principal.repaint();
+        jPanelPrincipal.removeAll();
+        jPanelPrincipal.add(as,BorderLayout.CENTER);
+        jPanelPrincipal.revalidate();
+        jPanelPrincipal.repaint();
     }
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {
         rp.setSize(567,271);
         rp.setLocation(0,0);
 
-        Principal.removeAll();
-        Principal.add(rp,BorderLayout.CENTER);
-        Principal.revalidate();
-        Principal.repaint();
+        jPanelPrincipal.removeAll();
+        jPanelPrincipal.add(rp,BorderLayout.CENTER);
+        jPanelPrincipal.revalidate();
+        jPanelPrincipal.repaint();
     }
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {
         ac.setSize(567,271);
         ac.setLocation(0,0);
 
-        Principal.removeAll();
-        Principal.add(ac,BorderLayout.CENTER);
-        Principal.revalidate();
-        Principal.repaint();
+        jPanelPrincipal.removeAll();
+        jPanelPrincipal.add(ac,BorderLayout.CENTER);
+        jPanelPrincipal.revalidate();
+        jPanelPrincipal.repaint();
     }
 
 
 
 
     // Variables declaration - do not modify
-    private javax.swing.JPanel Principal;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JPanel jPanelPrincipal;
+    private javax.swing.JButton jButtonResetAll;
+    private javax.swing.JButton jButtonCrear;
+    private javax.swing.JButton jButtonModificar;
+    private javax.swing.JButton jButtonAsignarMision;
+    private javax.swing.JButton jButtonAsignarEstado;
+    private javax.swing.JButton jButtonAcciones;
+    private javax.swing.JComboBox<String> jComboBoxRango;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
