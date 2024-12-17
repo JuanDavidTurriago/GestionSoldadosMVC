@@ -331,6 +331,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jComboBoxRango.setActionCommand("Rango");
         jComboBoxRango.addActionListener(controlador);
 
+
+
     }
     // Variables declaration - do not modify
     private javax.swing.JPanel jPanelPrincipal;

@@ -6,26 +6,26 @@ import modelo.militar.rangos.SoldadoRaso;
 import modelo.militar.rangos.Teniente;
 import modelo.militar.soldados.TodosLosSoldados;
 import vista.Crear;
-import java.util.ArrayList;
 
 public class ControladorCrearSoldado{
     private Crear crear;
-    private ArrayList<TodosLosSoldados> todosLosSoldados;
-    private ArrayList<SoldadoRaso> soldadosRasos;
-    private ArrayList<Teniente> tenientes;
-    private ArrayList<Capitan> capitanes;
-    private ArrayList<Coronel> coroneles;
+    private SoldadoRaso soldadoRaso;
+    private Teniente teniente;
+    private Capitan capitan;
+    private Coronel coronel;
+    private TodosLosSoldados todosLosSoldados;
 
-    public ControladorCrearSoldado(Crear crear) {
+
+    public ControladorCrearSoldado(Crear crear, SoldadoRaso soldadoRaso,Teniente teniente,Capitan capitan,Coronel coronel, TodosLosSoldados todosLosSoldados) {
 
         this.crear = crear;
-        this.crear.setControlador(this);
+        this.soldadoRaso = soldadoRaso;
+        this.teniente = teniente;
+        this.capitan = capitan;
+        this.coronel = coronel;
+        this.todosLosSoldados = todosLosSoldados;
 
-        todosLosSoldados = new ArrayList<TodosLosSoldados>();
-        soldadosRasos = new ArrayList<SoldadoRaso>();
-        tenientes = new ArrayList<Teniente>();
-        capitanes = new ArrayList<Capitan>();
-        coroneles = new ArrayList<Coronel>();
+        this.crear.setControlador(this);
 
         this.crear.agregarListener(e -> {
             crearSoldado();
@@ -42,71 +42,93 @@ public class ControladorCrearSoldado{
         String estrategia = crear.getEstrategia();
         String rango = crear.getRango();
 
+        if (rango.equals("SoldadoRaso")) {
 
-        if (rango=="SoldadoRaso") {
-
-            for(TodosLosSoldados todos : todosLosSoldados){
-                if(todos.getId()==ID){
+            for(TodosLosSoldados todos : todosLosSoldados.getTodosLosSoldados()){
+                if(todos.getId().equals(ID)){
                     javax.swing.JOptionPane.showMessageDialog(null, "Por favor escriba un 'ID' valido.");
                     return;
                 }
             }
             TodosLosSoldados todoLosSoldados = new TodosLosSoldados(ID,1);
-            todosLosSoldados.add(todoLosSoldados);
+            todosLosSoldados.setTodos(todoLosSoldados);
 
-            SoldadoRaso soldadoRaso = new SoldadoRaso(nombre, ID, "Soldado raso", 1);
-            soldadosRasos.add(soldadoRaso);
 
-            System.out.println(soldadosRasos);
+            SoldadoRaso nuevoSoldado = new SoldadoRaso(nombre, ID, "Soldado raso", 1);
+            soldadoRaso.setSoldado(nuevoSoldado);
 
-        } else if (rango=="Teniente") {
+            System.out.println(soldadoRaso.getSoldadosRasos());
 
-            for(TodosLosSoldados todos : todosLosSoldados){
-                if(todos.getId()==ID){
-                    javax.swing.JOptionPane.showMessageDialog(null, "Por favor escriba un 'ID' valido.");
-                    return;
-                }
-            }
-            TodosLosSoldados todoLosSoldados = new TodosLosSoldados(ID,1);
-            todosLosSoldados.add(todoLosSoldados);
+        } else if (rango.equals("Teniente")) {
 
-            Teniente teniente = new Teniente(nombre, ID, "Teniente", 2, unidad);
-            tenientes.add(teniente);
-
-        } else if (rango=="Capitan") {
-
-            for(TodosLosSoldados todos : todosLosSoldados){
-                if(todos.getId()==ID){
+            for(TodosLosSoldados todos : todosLosSoldados.getTodosLosSoldados()){
+                if(todos.getId().equals(ID)){
                     javax.swing.JOptionPane.showMessageDialog(null, "Por favor escriba un 'ID' valido.");
                     return;
                 }
             }
 
-            if (soldadosMando=="") {
-                javax.swing.JOptionPane.showMessageDialog(null, "Por favor ingrese un numero.");
+            if (unidad == null || unidad.isEmpty()) {
+                javax.swing.JOptionPane.showMessageDialog(null, "Por favor ingrese un numero en unidad.");
+                return;
+            }
+            TodosLosSoldados todoLosSoldados = new TodosLosSoldados(ID,2);
+            todosLosSoldados.setTodos(todoLosSoldados);
+
+
+            Teniente nuevoTeniente = new Teniente(nombre, ID, "Teniente", 2, unidad);
+            teniente.setTeniente(nuevoTeniente);
+
+            System.out.println(teniente.getTeniente());
+
+
+        } else if (rango.equals("Capitan")) {
+
+            for(TodosLosSoldados todos : todosLosSoldados.getTodosLosSoldados()){
+                if(todos.getId().equals(ID)){
+                    javax.swing.JOptionPane.showMessageDialog(null, "Por favor escriba un 'ID' valido.");
+                    return;
+                }
+            }
+
+            if (soldadosMando == null || soldadosMando.isEmpty()) {
+                javax.swing.JOptionPane.showMessageDialog(null, "Por favor ingrese un numero en soldados bajo su mando.");
                 return;
             }
 
-            TodosLosSoldados todoLosSoldados = new TodosLosSoldados(ID,1);
-            todosLosSoldados.add(todoLosSoldados);
+            TodosLosSoldados todoLosSoldados = new TodosLosSoldados(ID,3);
+            todosLosSoldados.setTodos(todoLosSoldados);
 
-            Capitan capitan = new Capitan(nombre, ID, "Capitan", 3, soldadosMando);
-            capitanes.add(capitan);
 
-        }else if (rango=="Coronel") {
 
-            for(TodosLosSoldados todos : todosLosSoldados){
-                if(todos.getId()==ID){
+            Capitan nuevoCapitan = new Capitan(nombre, ID, "Capitan", 3, soldadosMando);
+            capitan.setCapitan(nuevoCapitan);
+
+            System.out.println(capitan.getCapitan());
+
+        }else if (rango.equals("Coronel")) {
+
+            for(TodosLosSoldados todos : todosLosSoldados.getTodosLosSoldados()){
+                if(todos.getId().equals(ID)){
                     javax.swing.JOptionPane.showMessageDialog(null, "Por favor escriba un 'ID' valido.");
                     return;
                 }
             }
-            TodosLosSoldados todoLosSoldados = new TodosLosSoldados(ID,1);
-            todosLosSoldados.add(todoLosSoldados);
 
-            Coronel coronel = new Coronel(nombre, ID, "Coronel", 4,estrategia);
-            coroneles.add(coronel);
-            //encontrado = true;
+            if (estrategia == null || estrategia.isEmpty()) {
+                javax.swing.JOptionPane.showMessageDialog(null, "Por favor ingrese una estrategia.");
+                return;
+            }
+
+            TodosLosSoldados todoLosSoldados = new TodosLosSoldados(ID,4);
+            todosLosSoldados.setTodos(todoLosSoldados);
+
+
+            Coronel nuevoCoronel = new Coronel(nombre, ID, "Coronel", 4,estrategia);
+            coronel.setCoronel(nuevoCoronel);
+
+            System.out.println(coronel.getCoronel());
+
         }
 
     }

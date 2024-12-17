@@ -2,12 +2,18 @@ package modelo.militar.rangos;
 
 import modelo.militar.soldados.Rango;
 
+import java.util.ArrayList;
+
 public class SoldadoRaso extends Rango {
 
+    private ArrayList<SoldadoRaso> soldadosRasos;
 
     public SoldadoRaso(String nombre, String id, String rango, int nivel) {
         super(nombre, id, rango, nivel);
+        this.soldadosRasos = new ArrayList<SoldadoRaso>();
     }
+
+
 
     @Override
     public void realizarAccion() {
@@ -24,4 +30,18 @@ public class SoldadoRaso extends Rango {
 
     }
 
+    public ArrayList<SoldadoRaso> getSoldadosRasos() {
+        return soldadosRasos;
+    }
+
+    public void setSoldado(SoldadoRaso soldado) {
+        soldadosRasos.add(soldado);
+    }
+
+    @Override
+    public String toString() {
+        return "Nombre: " + this.getNombre() +
+                ", ID: " + this.getId() +
+                ", Rango: " + this.getRango();
+    }
 }
