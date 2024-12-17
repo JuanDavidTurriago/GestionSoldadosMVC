@@ -1,9 +1,13 @@
 package vista;
 
+import controlador.ControladorCrearSoldado;
+
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Crear extends javax.swing.JPanel {
+    private ControladorCrearSoldado controlador;
 
     public Crear() {
         initComponents();
@@ -56,6 +60,7 @@ public class Crear extends javax.swing.JPanel {
         jTextFieldSoldadosMando.setEditable(false);
 
         ActionListener actionListener = new ActionListener() {
+
             @Override
             public void actionPerformed(ActionEvent e) {
 
@@ -88,10 +93,6 @@ public class Crear extends javax.swing.JPanel {
         jButtonAgregar.setBackground(new java.awt.Color(0, 204, 0));
         jButtonAgregar.setText("AGREGAR");
         jButtonAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonAgregar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-        }});
 
         jLabel5.setText("Unidad");
         jLabel6.setText("Soldados bajo su mando:");
@@ -196,14 +197,54 @@ public class Crear extends javax.swing.JPanel {
                                 .addComponent(jButtonAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(24, 24, 24))
         );
-    }// </editor-fold>
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
     }
 
-    private void jRasoActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+    public String getNombre() {
+        return jTextFieldNombre.getText();
+    }
+
+    public String getID() {
+        return jTextFieldID.getText();
+    }
+
+    public String getjUnidad() {
+        return jTextFieldUnidad.getText();
+    }
+
+    public String getEstrategia() {
+        return jTextFieldEstrategia.getText();
+    }
+
+    public String getSoldadosMando() {
+        return jTextFieldSoldadosMando.getText();
+    }
+
+    public String getRango() {
+
+        String rango = "";
+        if (!jRadioButtonCoronel.isSelected() && !jRadioButtonRaso.isSelected() && !jRadioButtonTeniente.isSelected() && !jRadioButtonCapitan.isSelected()) {
+            javax.swing.JOptionPane.showMessageDialog(null, "Por favor seleccione un rango.");
+        }else {
+            if (jRadioButtonCoronel.isSelected()) {
+                rango = "Coronel";
+            } else if (jRadioButtonRaso.isSelected()) {
+                rango = "SoldadoRaso";
+            } else if (jRadioButtonTeniente.isSelected()) {
+                rango = "Teniente";
+            } else if (jRadioButtonCapitan.isSelected()) {
+                rango = "Capitan";
+            }
+        }
+        return rango;
+    }
+
+    public void setControlador(ControladorCrearSoldado controlador) {
+        this.controlador = controlador;
+    }
+
+    public void agregarListener(ActionListener listener) {
+        jButtonAgregar.addActionListener(listener);
     }
 
     private javax.swing.JButton jButtonAgregar;

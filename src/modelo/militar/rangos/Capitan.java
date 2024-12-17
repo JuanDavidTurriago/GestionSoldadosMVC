@@ -4,10 +4,11 @@ import modelo.militar.soldados.Rango;
 
 public class Capitan extends Rango {
 
-    int cantidadSoldadosBajoSuMando;
+    String cantidadSoldadosBajoSuMando;
 
-    public Capitan(String nombre, String id, String rango, int nivel) {
+    public Capitan(String nombre, String id, String rango, int nivel, String cantidadSoldadosBajoSuMando) {
         super(nombre, id, rango, nivel);
+        this.cantidadSoldadosBajoSuMando = cantidadSoldadosBajoSuMando;
     }
 
     @Override
@@ -15,11 +16,11 @@ public class Capitan extends Rango {
         String accion = "Planificar y optimizar las operaciones de patrullaje en función de las necesidades estratégicas.";
     }
 
-    public int getCantidadSoldadosBajoSuMando() {
+    public String getCantidadSoldadosBajoSuMando() {
         return cantidadSoldadosBajoSuMando;
     }
 
-    public void setCantidadSoldadosBajoSuMando(int cantidadSoldadosBajoSuMando) {
+    public void setCantidadSoldadosBajoSuMando(String cantidadSoldadosBajoSuMando) {
         this.cantidadSoldadosBajoSuMando = cantidadSoldadosBajoSuMando;
     }
 

@@ -249,7 +249,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
 
-    public void mostrarCrear(){
+    public void mostrarCrear(Crear crear){
+
         crear.setSize(567,271);
         crear.setLocation(0,0);
 

@@ -1,5 +1,6 @@
 package controlador;
 
+import vista.Crear;
 import vista.VentanaPrincipal;
 
 import java.awt.event.ActionEvent;
@@ -18,7 +19,9 @@ public class ControladorVentanaPrincipal implements ActionListener {
         String comando = e.getActionCommand();
         switch (comando) {
             case "Crear":
-                ventanaPrincipal.mostrarCrear();
+                Crear crear = new Crear();
+                ControladorCrearSoldado crearSoldado = new ControladorCrearSoldado(crear);
+                ventanaPrincipal.mostrarCrear(crear);
                 break;
             case "Modificar":
                 ventanaPrincipal.mostrarModificar();

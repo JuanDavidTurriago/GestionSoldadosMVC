@@ -23,4 +23,5 @@ public class SoldadoRaso extends Rango {
     public void reportarEstado(String estado) {
 
     }
+
 }

@@ -6,8 +6,9 @@ public class Coronel extends Rango {
 
     String estrategia;
 
-    public Coronel(String nombre, String id, String rango, int nivel) {
+    public Coronel(String nombre, String id, String rango, int nivel, String estrategia) {
         super(nombre, id, rango, nivel);
+        this.estrategia = estrategia;
     }
 
     @Override
