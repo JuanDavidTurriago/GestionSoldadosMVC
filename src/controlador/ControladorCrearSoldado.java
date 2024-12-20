@@ -33,7 +33,6 @@ public class ControladorCrearSoldado{
 
     }
 
-
     public void crearSoldado() {
         String ID = crear.getID();
         String nombre = crear.getNombre();
@@ -53,11 +52,11 @@ public class ControladorCrearSoldado{
             TodosLosSoldados todoLosSoldados = new TodosLosSoldados(ID,1);
             todosLosSoldados.setTodos(todoLosSoldados);
 
-
             SoldadoRaso nuevoSoldado = new SoldadoRaso(nombre, ID, "Soldado raso", 1);
             soldadoRaso.setSoldado(nuevoSoldado);
 
-            System.out.println(soldadoRaso.getSoldadosRasos());
+            javax.swing.JOptionPane.showMessageDialog(null, "Soldado creado con exito.");
+            crear.limpiar();
 
         } else if (rango.equals("Teniente")) {
 
@@ -75,12 +74,11 @@ public class ControladorCrearSoldado{
             TodosLosSoldados todoLosSoldados = new TodosLosSoldados(ID,2);
             todosLosSoldados.setTodos(todoLosSoldados);
 
-
             Teniente nuevoTeniente = new Teniente(nombre, ID, "Teniente", 2, unidad);
             teniente.setTeniente(nuevoTeniente);
 
-            System.out.println(teniente.getTeniente());
-
+            javax.swing.JOptionPane.showMessageDialog(null, "Soldado creado con exito.");
+            crear.limpiar();
 
         } else if (rango.equals("Capitan")) {
 
@@ -99,12 +97,11 @@ public class ControladorCrearSoldado{
             TodosLosSoldados todoLosSoldados = new TodosLosSoldados(ID,3);
             todosLosSoldados.setTodos(todoLosSoldados);
 
-
-
             Capitan nuevoCapitan = new Capitan(nombre, ID, "Capitan", 3, soldadosMando);
             capitan.setCapitan(nuevoCapitan);
 
-            System.out.println(capitan.getCapitan());
+            javax.swing.JOptionPane.showMessageDialog(null, "Soldado creado con exito.");
+            crear.limpiar();
 
         }else if (rango.equals("Coronel")) {
 
@@ -123,13 +120,15 @@ public class ControladorCrearSoldado{
             TodosLosSoldados todoLosSoldados = new TodosLosSoldados(ID,4);
             todosLosSoldados.setTodos(todoLosSoldados);
 
-
             Coronel nuevoCoronel = new Coronel(nombre, ID, "Coronel", 4,estrategia);
             coronel.setCoronel(nuevoCoronel);
 
-            System.out.println(coronel.getCoronel());
+            javax.swing.JOptionPane.showMessageDialog(null, "Soldado creado con exito.");
+            crear.limpiar();
 
         }
+
+
 
     }
 }

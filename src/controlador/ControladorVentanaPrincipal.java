@@ -5,9 +5,8 @@ import modelo.militar.rangos.Coronel;
 import modelo.militar.rangos.SoldadoRaso;
 import modelo.militar.rangos.Teniente;
 import modelo.militar.soldados.TodosLosSoldados;
-import vista.Crear;
-import vista.Modificar;
-import vista.VentanaPrincipal;
+import vista.*;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -46,17 +45,24 @@ public class ControladorVentanaPrincipal implements ActionListener {
                 break;
             case "Modificar":
                 Modificar modificar = new Modificar();
-                ControladorModificarSoldado modificarSoldado = new ControladorModificarSoldado(modificar,soldadoRaso,teniente,capitan,coronel,todosLosSoldados);
+                ControladorModificarSoldado modificarSoldado = new ControladorModificarSoldado(modificar,soldadoRaso,teniente,capitan,coronel);
                 ventanaPrincipal.mostrarModificar(modificar);
                 break;
             case "AsignarMision":
-                ventanaPrincipal.mostrarAsignarMision();
+                AsignarM mision = new AsignarM();
+                ControladorMision controladorMision = new ControladorMision(mision,soldadoRaso,teniente,capitan,coronel);
+                ventanaPrincipal.mostrarAsignarMision(mision);
                 break;
             case "AsignarEstado":
-                ventanaPrincipal.mostrarAsignarEstado();
+                ModificarEstado estado = new ModificarEstado();
+                ControladorEstado controladorEstado = new ControladorEstado(estado,soldadoRaso,teniente,capitan,coronel);
+                ventanaPrincipal.mostrarAsignarEstado(estado);
                 break;
             case "Acciones":
-                ventanaPrincipal.mostrarAcciones();
+                Acciones acciones = new Acciones();
+                ControladorAcciones controladorAcciones = new ControladorAcciones(acciones,soldadoRaso,teniente,capitan,coronel,todosLosSoldados);
+                acciones.setControlador(controladorAcciones);
+                ventanaPrincipal.mostrarAcciones(acciones);
                 break;
             case "RESET ALL":
                 ventanaPrincipal.resetAll();
@@ -77,7 +83,6 @@ public class ControladorVentanaPrincipal implements ActionListener {
 
         for (SoldadoRaso raso : soldadosRasos) {
 
-
             String[] datos = {
 
                     raso.getId(),
@@ -94,7 +99,6 @@ public class ControladorVentanaPrincipal implements ActionListener {
                 soldadoRaso.setEstado("Sin mision");
                 datos[3]= soldadoRaso.getEstado();
             }
-
 
             listaSoldadosRasos.add(datos);
         }
@@ -175,9 +179,7 @@ public class ControladorVentanaPrincipal implements ActionListener {
 
             listaCoroneles.add(datos);
         }
-
         ventanaPrincipal.rango(listaSoldadosRasos,listaTenientes,listaCapitanes,listaCoroneles,rango);
-
     }
 
 }

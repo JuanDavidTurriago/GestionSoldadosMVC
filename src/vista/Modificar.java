@@ -204,7 +204,7 @@ public class Modificar extends javax.swing.JPanel {
                                 .addComponent(jButtonModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(24, 24, 24))
         );
-    }// </editor-fold>
+    }
 
     public String getNombre() {
         return jTextFieldNombre.getText();
@@ -253,8 +253,15 @@ public class Modificar extends javax.swing.JPanel {
         jButtonModificar.addActionListener(listener);
     }
 
+    public void limpiar() {
+        jTextFieldNombre.setText("");
+        jTextFieldID.setText("");
+        jTextFieldUnidad.setText("");
+        jTextFieldEstrategia.setText("");
+        jTextFieldSoldadosMando.setText("");
 
-    // Variables declaration - do not modify
+    }
+
     private javax.swing.JButton jButtonModificar;
     private javax.swing.JRadioButton jRadioButtonCapitan;
     private javax.swing.JRadioButton jRadioButtonCoronel;
@@ -273,5 +280,4 @@ public class Modificar extends javax.swing.JPanel {
     private javax.swing.JTextField jTextFieldEstrategia;
     private javax.swing.JTextField jTextFieldSoldadosMando;
     private javax.swing.ButtonGroup buttonGroupRangos;
-    // End of variables declaration
 }

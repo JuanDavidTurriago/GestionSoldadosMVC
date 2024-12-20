@@ -1,10 +1,5 @@
 package vista;
 
-import modelo.militar.rangos.Capitan;
-import modelo.militar.rangos.Coronel;
-import modelo.militar.rangos.SoldadoRaso;
-import modelo.militar.rangos.Teniente;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -13,10 +8,6 @@ import java.util.ArrayList;
 
 public class VentanaPrincipal extends javax.swing.JFrame {
 
-
-    AsignarM asignarMision = new AsignarM();
-    ModificarEstado asignarEstado = new ModificarEstado();
-    Acciones acciones = new Acciones();
 
     public VentanaPrincipal() {
         initComponents();
@@ -274,7 +265,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanelPrincipal.repaint();
     }
 
-    public void mostrarAsignarMision(){
+    public void mostrarAsignarMision(AsignarM asignarMision){
         asignarMision.setSize(567,271);
         asignarMision.setLocation(0,0);
 
@@ -285,7 +276,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     }
 
-    public void mostrarAsignarEstado(){
+    public void mostrarAsignarEstado(ModificarEstado asignarEstado){
         asignarEstado.setSize(567,271);
         asignarEstado.setLocation(0,0);
 
@@ -296,7 +287,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     }
 
-    public void mostrarAcciones() {
+    public void mostrarAcciones(Acciones acciones) {
         acciones.setSize(567, 271);
         acciones.setLocation(0, 0);
 
@@ -403,7 +394,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     }
 
-
     public void setControlador(ActionListener controlador) {
         jButtonCrear.setActionCommand("Crear");
         jButtonCrear.addActionListener(controlador);
@@ -424,7 +414,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jComboBoxRango.addActionListener(controlador);
 
     }
-    // Variables declaration - do not modify
+
     private javax.swing.JPanel jPanelPrincipal;
     private javax.swing.JButton jButtonResetAll;
     private javax.swing.JButton jButtonCrear;
@@ -446,5 +436,4 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollBar jScrollBar1;
-    // End of variables declaration
 }

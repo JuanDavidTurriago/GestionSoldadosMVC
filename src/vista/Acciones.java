@@ -1,16 +1,20 @@
 package vista;
 
-public class Acciones extends javax.swing.JPanel {
+import controlador.ControladorAcciones;
+import java.awt.event.ActionListener;
 
+public class Acciones extends javax.swing.JPanel {
+    private ControladorAcciones controlador;
 
     public Acciones() {
 
         initComponents();
     }
 
-    @SuppressWarnings("unchecked")
                     
     private void initComponents() {
+
+
 
         jLabel1 = new javax.swing.JLabel();
         jButtonPatrullar = new javax.swing.JButton();
@@ -26,22 +30,12 @@ public class Acciones extends javax.swing.JPanel {
         jButtonPatrullar.setText("Patrullar");
         jButtonPatrullar.setBorder(new javax.swing.border.MatteBorder(null));
         jButtonPatrullar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonPatrullar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPatrullarActionPerformed(evt);
-            }
-        });
 
         jButtonSaludar.setBackground(new java.awt.Color(255, 204, 255));
         jButtonSaludar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButtonSaludar.setText("Saludar");
         jButtonSaludar.setBorder(new javax.swing.border.MatteBorder(null));
         jButtonSaludar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonSaludar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jSaludarActionPerformed(evt);
-            }
-        });
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setText("ID del soldado:");
@@ -83,23 +77,23 @@ public class Acciones extends javax.swing.JPanel {
                     .addComponent(jButtonPatrullar, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(93, 93, 93))
         );
-    }// </editor-fold>                        
-
-    private void jPatrullarActionPerformed(java.awt.event.ActionEvent evt) {                                           
-
-    }                                          
-
-    private void jSaludarActionPerformed(java.awt.event.ActionEvent evt) {                                         
-
-
     }
 
+    public String getjTextFieldID() {
+        return jTextFieldID.getText();
+    }
 
-    // Variables declaration - do not modify                     
+    public void setControlador(ActionListener controlador) {
+        jButtonSaludar.setActionCommand("Saludar");
+        jButtonSaludar.addActionListener(controlador);
+
+        jButtonPatrullar.setActionCommand("Patrullar");
+        jButtonPatrullar.addActionListener(controlador);
+    }
+
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JButton jButtonPatrullar;
     private javax.swing.JButton jButtonSaludar;
     private javax.swing.JTextField jTextFieldID;
-    // End of variables declaration                   
 }

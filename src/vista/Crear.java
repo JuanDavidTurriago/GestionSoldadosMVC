@@ -247,6 +247,15 @@ public class Crear extends javax.swing.JPanel {
         jButtonAgregar.addActionListener(listener);
     }
 
+    public void limpiar() {
+        jTextFieldNombre.setText("");
+        jTextFieldID.setText("");
+        jTextFieldUnidad.setText("");
+        jTextFieldEstrategia.setText("");
+        jTextFieldSoldadosMando.setText("");
+
+    }
+
     private javax.swing.JButton jButtonAgregar;
     private javax.swing.JRadioButton jRadioButtonCapitan;
     private javax.swing.JRadioButton jRadioButtonCoronel;

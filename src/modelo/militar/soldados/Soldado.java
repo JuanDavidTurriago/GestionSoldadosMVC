@@ -21,33 +21,8 @@ public class Soldado {
             System.out.println("Rango: " + rango);
     }
 
-    public void patrullar(String rango) {
 
-        if(rango.equals("Lider")){
 
-        }if(rango.equals("SubLider")){
-
-        }if(rango.equals("MedioLider")){
-
-        }if(rango.equals("Lidertt")){
-
-        }
-
-    }
-
-    public void saludar(String nombre,String saludo) {
-        this.nombre = nombre;
-        String lowerCaseNombre = nombre.toLowerCase();
-
-        char primeraLetra = lowerCaseNombre.charAt(0);
-        char ultimaLetra = lowerCaseNombre.charAt(lowerCaseNombre.length() - 1);
-
-        if(primeraLetra==ultimaLetra){
-            System.out.println(saludo);
-        }else{
-            System.out.println(saludo);
-        }
-    }
 
     public String regañado(String rango) {
 

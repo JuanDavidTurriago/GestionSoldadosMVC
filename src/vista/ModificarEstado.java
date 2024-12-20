@@ -1,7 +1,13 @@
 package vista;
 
-public class ModificarEstado extends javax.swing.JPanel {
+import controlador.ControladorEstado;
+import controlador.ControladorMision;
 
+import javax.swing.*;
+import java.awt.event.ActionListener;
+
+public class ModificarEstado extends javax.swing.JPanel {
+    private ControladorEstado controlador;
 
     public ModificarEstado() {
 
@@ -27,11 +33,7 @@ public class ModificarEstado extends javax.swing.JPanel {
         jButtonAsignar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButtonAsignar.setText("ASIGNAR");
         jButtonAsignar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonAsignar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel10.setText("Estado:");
@@ -79,8 +81,26 @@ public class ModificarEstado extends javax.swing.JPanel {
         );
     }
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    public String getjTextFieldAsignar() {
+        return jTextFieldAsignar.getText();
+    }
 
+    public String getjTextFieldID() {
+        return jTextFieldID.getText();
+    }
+
+    public void setControlador(ControladorEstado controlador) {
+        this.controlador = controlador;
+    }
+
+    public void agregarListener(ActionListener listener) {
+        jButtonAsignar.addActionListener(listener);
+    }
+
+    public void limpiar() {
+
+        jTextFieldID.setText("");
+        jTextFieldAsignar.setText("");
     }
 
     private javax.swing.JButton jButtonAsignar;
@@ -89,5 +109,4 @@ public class ModificarEstado extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jTextFieldID;
     private javax.swing.JTextField jTextFieldAsignar;
-    // End of variables declaration                   
 }
