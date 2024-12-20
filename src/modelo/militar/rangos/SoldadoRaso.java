@@ -22,12 +22,12 @@ public class SoldadoRaso extends Rango {
 
     @Override
     public void asignarMision(String mision) {
-
+        this.mision = mision;
     }
 
     @Override
     public void reportarEstado(String estado) {
-
+        this.estado = estado;
     }
 
     public ArrayList<SoldadoRaso> getSoldadosRasos() {

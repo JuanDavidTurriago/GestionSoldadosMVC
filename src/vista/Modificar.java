@@ -1,10 +1,13 @@
 package vista;
 
+import controlador.ControladorCrearSoldado;
+import controlador.ControladorModificarSoldado;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Modificar extends javax.swing.JPanel {
-
+    private ControladorModificarSoldado controlador;
 
     public Modificar() {
         initComponents();
@@ -203,12 +206,51 @@ public class Modificar extends javax.swing.JPanel {
         );
     }// </editor-fold>
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+    public String getNombre() {
+        return jTextFieldNombre.getText();
     }
 
-    private void jRasoActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+    public String getID() {
+        return jTextFieldID.getText();
+    }
+
+    public String getjUnidad() {
+        return jTextFieldUnidad.getText();
+    }
+
+    public String getEstrategia() {
+        return jTextFieldEstrategia.getText();
+    }
+
+    public String getSoldadosMando() {
+        return jTextFieldSoldadosMando.getText();
+    }
+
+    public String getRango() {
+
+        String rango = "";
+        if (!jRadioButtonCoronel.isSelected() && !jRadioButtonRaso.isSelected() && !jRadioButtonTeniente.isSelected() && !jRadioButtonCapitan.isSelected()) {
+            javax.swing.JOptionPane.showMessageDialog(null, "Por favor seleccione un rango.");
+        }else {
+            if (jRadioButtonCoronel.isSelected()) {
+                rango = "Coronel";
+            } else if (jRadioButtonRaso.isSelected()) {
+                rango = "SoldadoRaso";
+            } else if (jRadioButtonTeniente.isSelected()) {
+                rango = "Teniente";
+            } else if (jRadioButtonCapitan.isSelected()) {
+                rango = "Capitan";
+            }
+        }
+        return rango;
+    }
+
+    public void setControlador(ControladorModificarSoldado controlador) {
+        this.controlador = controlador;
+    }
+
+    public void agregarListener(ActionListener listener) {
+        jButtonModificar.addActionListener(listener);
     }
 
 

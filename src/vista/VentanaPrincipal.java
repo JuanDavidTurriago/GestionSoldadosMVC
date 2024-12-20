@@ -1,15 +1,19 @@
 package vista;
 
+import modelo.militar.rangos.Capitan;
+import modelo.militar.rangos.Coronel;
+import modelo.militar.rangos.SoldadoRaso;
+import modelo.militar.rangos.Teniente;
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 
 public class VentanaPrincipal extends javax.swing.JFrame {
 
-    Crear crear = new Crear();
-    Modificar modificar = new Modificar();
+
     AsignarM asignarMision = new AsignarM();
     ModificarEstado asignarEstado = new ModificarEstado();
     Acciones acciones = new Acciones();
@@ -260,7 +264,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanelPrincipal.repaint();
     }
 
-    public void mostrarModificar(){
+    public void mostrarModificar(Modificar modificar){
         modificar.setSize(567,271);
         modificar.setLocation(0,0);
 
@@ -307,8 +311,96 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
 
     }
+    public String getComboBoxRango(){
+        String categoriaSeleccionada = (String) jComboBoxRango.getSelectedItem();
+        return categoriaSeleccionada;
+    }
 
-    public void rango(){
+    public void rango(ArrayList<String[]> listaSoldadosRasos,
+                      ArrayList<String[]> listaTenientes,
+                      ArrayList<String[]> listaCapitanes,
+                      ArrayList<String[]> listaCoroneles,
+                      String rango){
+
+        jPanel2.removeAll();
+
+        switch(rango){
+            case "Soldado raso":
+
+                for (String[] datos : listaSoldadosRasos) {
+
+                    JLabel label = new JLabel("ID: " + datos[0] + "      Nombre: " + datos[1]);
+                    JLabel lab = new JLabel("Misión: " + datos[2] + "      Estado: " + datos[3]);
+                    JLabel sep = new JLabel("___________________________________");
+                    label.setAlignmentX(Component.CENTER_ALIGNMENT);
+                    lab.setAlignmentX(Component.CENTER_ALIGNMENT);
+                    sep.setAlignmentX(Component.CENTER_ALIGNMENT);
+                    jPanel2.add(label);
+                    jPanel2.add(lab);
+                    jPanel2.add(sep);
+
+                }
+
+                break;
+            case "Teniente":
+
+                for (String[] datos : listaTenientes) {//
+
+                    JLabel label = new JLabel("ID: "+datos[0]+"      Nombre: "+datos[1]);
+                    JLabel lab = new JLabel("Misión: "+datos[2]+"      Estado: "+datos[3]);
+                    JLabel uni = new JLabel("Unidad: "+datos[4]);
+                    JLabel sep = new JLabel("___________________________________");
+                    label.setAlignmentX(Component.CENTER_ALIGNMENT);
+                    lab.setAlignmentX(Component.CENTER_ALIGNMENT);
+                    sep.setAlignmentX(Component.CENTER_ALIGNMENT);
+                    jPanel2.add(label);
+                    jPanel2.add(lab);
+                    jPanel2.add(uni);
+                    jPanel2.add(sep);
+
+                }
+                break;
+            case "Capitan":
+
+                for (String[] datos : listaCapitanes) {
+
+                    JLabel label = new JLabel("ID: " + datos[0] + "      Nombre: " + datos[1]);
+                    JLabel lab = new JLabel("Misión: " + datos[2] + "      Estado: " + datos[3]);
+                    JLabel bajo = new JLabel("Soldados a cargo: " + datos[4]);
+                    JLabel sep = new JLabel("___________________________________");
+                    label.setAlignmentX(Component.CENTER_ALIGNMENT);
+                    lab.setAlignmentX(Component.CENTER_ALIGNMENT);
+                    sep.setAlignmentX(Component.CENTER_ALIGNMENT);
+                    jPanel2.add(label);
+                    jPanel2.add(lab);
+                    jPanel2.add(bajo);
+                    jPanel2.add(sep);
+
+                }
+                break;
+            case "Coronel":
+
+                for (String[] datos : listaCoroneles) {
+
+                    JLabel label = new JLabel("ID: " + datos[0] + "      Nombre: " + datos[1]);
+                    JLabel lab = new JLabel("Misión: " + datos[2] + "      Estado: " + datos[3]);
+                    JLabel est = new JLabel("Estrategia: " + datos[4]);
+                    JLabel sep = new JLabel("___________________________________");
+                    label.setAlignmentX(Component.CENTER_ALIGNMENT);
+                    lab.setAlignmentX(Component.CENTER_ALIGNMENT);
+                    sep.setAlignmentX(Component.CENTER_ALIGNMENT);
+                    jPanel2.add(label);
+                    jPanel2.add(lab);
+                    jPanel2.add(est);
+                    jPanel2.add(sep);
+
+                }
+                break;
+        }
+
+        jPanel2.revalidate();
+        jPanel2.repaint();
+
     }
 
 
@@ -330,8 +422,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jComboBoxRango.setActionCommand("Rango");
         jComboBoxRango.addActionListener(controlador);
-
-
 
     }
     // Variables declaration - do not modify
