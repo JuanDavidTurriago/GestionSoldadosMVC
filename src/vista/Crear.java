@@ -2,12 +2,10 @@ package vista;
 
 import controlador.ControladorCrearSoldado;
 
-import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Crear extends javax.swing.JPanel {
-    private ControladorCrearSoldado controlador;
 
     public Crear() {
         initComponents();
@@ -240,7 +238,7 @@ public class Crear extends javax.swing.JPanel {
     }
 
     public void setControlador(ControladorCrearSoldado controlador) {
-        this.controlador = controlador;
+
     }
 
     public void agregarListener(ActionListener listener) {
@@ -274,7 +272,4 @@ public class Crear extends javax.swing.JPanel {
     private javax.swing.JTextField jTextFieldEstrategia;
     private javax.swing.JTextField jTextFieldSoldadosMando;
     private javax.swing.ButtonGroup buttonGroupRangos;
-
-
-
 }

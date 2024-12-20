@@ -1,20 +1,15 @@
 package vista;
 
-import controlador.ControladorAcciones;
 import java.awt.event.ActionListener;
 
 public class Acciones extends javax.swing.JPanel {
-    private ControladorAcciones controlador;
 
     public Acciones() {
 
         initComponents();
     }
-
                     
     private void initComponents() {
-
-
 
         jLabel1 = new javax.swing.JLabel();
         jButtonPatrullar = new javax.swing.JButton();

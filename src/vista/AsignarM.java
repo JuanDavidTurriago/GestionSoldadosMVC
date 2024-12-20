@@ -6,7 +6,6 @@ import controlador.ControladorMision;
 import java.awt.event.ActionListener;
 
 public class AsignarM extends javax.swing.JPanel {
-    private ControladorMision controlador;
 
     public AsignarM() {
         initComponents();
@@ -90,7 +89,7 @@ public class AsignarM extends javax.swing.JPanel {
     }
 
     public void setControlador(ControladorMision controlador) {
-        this.controlador = controlador;
+
     }
 
     public void agregarListener(ActionListener listener) {

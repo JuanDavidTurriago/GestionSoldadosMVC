@@ -1,13 +1,11 @@
 package vista;
 
-import controlador.ControladorCrearSoldado;
 import controlador.ControladorModificarSoldado;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Modificar extends javax.swing.JPanel {
-    private ControladorModificarSoldado controlador;
 
     public Modificar() {
         initComponents();
@@ -88,15 +86,14 @@ public class Modificar extends javax.swing.JPanel {
         jRadioButtonTeniente.addActionListener(actionListener);
         jRadioButtonCoronel.addActionListener(actionListener);
 
-
         jButtonModificar.setBackground(new java.awt.Color(0, 204, 0));
         jButtonModificar.setText("MODIFICAR");
         jButtonModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
 
-                } 
-            });
+            }
+        });
         
 
         jLabel5.setText("Unidad");
@@ -246,7 +243,7 @@ public class Modificar extends javax.swing.JPanel {
     }
 
     public void setControlador(ControladorModificarSoldado controlador) {
-        this.controlador = controlador;
+
     }
 
     public void agregarListener(ActionListener listener) {

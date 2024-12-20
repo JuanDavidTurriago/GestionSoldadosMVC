@@ -5,7 +5,6 @@ import modelo.militar.rangos.Coronel;
 import modelo.militar.rangos.SoldadoRaso;
 import modelo.militar.rangos.Teniente;
 import vista.AsignarM;
-import vista.Modificar;
 
 import javax.swing.*;
 
@@ -82,6 +81,4 @@ public class ControladorMision {
             JOptionPane.showMessageDialog(null, "ID no encontrado.");
         }
     }
-
-
 }

@@ -65,14 +65,12 @@ public class ControladorVentanaPrincipal implements ActionListener {
                 ventanaPrincipal.mostrarAcciones(acciones);
                 break;
             case "RESET ALL":
-                ventanaPrincipal.resetAll();
+                    resetAll();
                 break;
             case "Rango":
-
                 String rango = ventanaPrincipal.getComboBoxRango();
                 actualizarListaSoldados(rango);
                 break;
-
         }
     }
 
@@ -182,4 +180,12 @@ public class ControladorVentanaPrincipal implements ActionListener {
         ventanaPrincipal.rango(listaSoldadosRasos,listaTenientes,listaCapitanes,listaCoroneles,rango);
     }
 
+    public void resetAll(){
+        soldadoRaso.getSoldadosRasos().clear();
+        teniente.getTeniente().clear();
+        capitan.getCapitan().clear();
+        coronel.getCoronel().clear();
+        todosLosSoldados.getTodosLosSoldados().clear();
+        javax.swing.JOptionPane.showMessageDialog(null, "TODOS LOS DATOS HAN SIDO ELIMINADOS.");
+    }
 }

@@ -40,7 +40,6 @@ public class Teniente extends Rango {
             patru = "El Teniente ("+ nombre + ") con numero de identificacion: (" + id + ") debe hacer lo siguiente \n " +
                     "Actuar como punto de contacto entre los soldados y los rangos superiores.";
         }
-
     }
 
 
@@ -99,5 +98,4 @@ public class Teniente extends Rango {
                 ", Rango: " + this.getRango() +
                 ", Unidad: " + this.getUnidad();
     }
-
 }

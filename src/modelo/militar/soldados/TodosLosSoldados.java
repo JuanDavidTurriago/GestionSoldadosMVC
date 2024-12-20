@@ -14,7 +14,6 @@ public class TodosLosSoldados {
         this.todosLosSoldados = new ArrayList<>();
     }
 
-
     public int getNivel() {
         return nivel;
     }

@@ -6,5 +6,4 @@ public interface OperacionesMilitares {
 
     void reportarEstado(String estado);
 
-
 }

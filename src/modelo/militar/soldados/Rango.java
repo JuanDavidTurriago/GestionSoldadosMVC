@@ -11,9 +11,7 @@ public abstract class Rango extends Soldado implements OperacionesMilitares {
         this.nivel = nivel;
     }
 
-
     public abstract void realizarAccion();
-
 
     public int getNivel() {
         return nivel;

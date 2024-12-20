@@ -1,13 +1,10 @@
 package vista;
 
 import controlador.ControladorEstado;
-import controlador.ControladorMision;
 
-import javax.swing.*;
 import java.awt.event.ActionListener;
 
 public class ModificarEstado extends javax.swing.JPanel {
-    private ControladorEstado controlador;
 
     public ModificarEstado() {
 
@@ -23,19 +20,18 @@ public class ModificarEstado extends javax.swing.JPanel {
         jLabel10 = new javax.swing.JLabel();
         jTextFieldAsignar = new javax.swing.JTextField();
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24));
         jLabel1.setText("ASIGNACIÓN DE ESTADO");
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14));
         jLabel9.setText("ID del soldado a modificar:");
 
         jButtonAsignar.setBackground(new java.awt.Color(255, 153, 0));
-        jButtonAsignar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButtonAsignar.setFont(new java.awt.Font("Segoe UI", 1, 14));
         jButtonAsignar.setText("ASIGNAR");
         jButtonAsignar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14));
         jLabel10.setText("Estado:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -90,7 +86,7 @@ public class ModificarEstado extends javax.swing.JPanel {
     }
 
     public void setControlador(ControladorEstado controlador) {
-        this.controlador = controlador;
+
     }
 
     public void agregarListener(ActionListener listener) {

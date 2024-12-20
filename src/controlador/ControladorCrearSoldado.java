@@ -127,8 +127,5 @@ public class ControladorCrearSoldado{
             crear.limpiar();
 
         }
-
-
-
     }
 }

@@ -89,14 +89,9 @@ public class ControladorAcciones implements ActionListener {
                             break;
                         }
                         break;
-
                 }
-
             }
-
         }
-
-
     }
 
     public void patrullar(){
@@ -145,12 +140,8 @@ public class ControladorAcciones implements ActionListener {
                             break;
                         }
                         break;
-
                 }
-
             }
         }
     }
-
-
 }

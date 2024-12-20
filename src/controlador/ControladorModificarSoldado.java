@@ -4,7 +4,6 @@ import modelo.militar.rangos.Capitan;
 import modelo.militar.rangos.Coronel;
 import modelo.militar.rangos.SoldadoRaso;
 import modelo.militar.rangos.Teniente;
-import modelo.militar.soldados.TodosLosSoldados;
 import vista.Modificar;
 
 import javax.swing.*;
@@ -119,7 +118,6 @@ public class ControladorModificarSoldado {
                     JOptionPane.showMessageDialog(null, "No se encontró el coronel con el ID ingresado");
                 }
                 break;
-
         }
     }
 }

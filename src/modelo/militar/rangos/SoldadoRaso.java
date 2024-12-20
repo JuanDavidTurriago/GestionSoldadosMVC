@@ -32,7 +32,6 @@ public class SoldadoRaso extends Rango {
             patru= "El soldado raso ("+ nombre + ") con numero de identificacion: (" + id + ") debe hacer lo siguiente \n " +
                     "Realizar revisiones en puntos de control específicos.";
         }
-
     }
 
     public void saludar(String nombre) {
@@ -47,8 +46,6 @@ public class SoldadoRaso extends Rango {
         }else{
             salu = "¿Qué tal, compañero? Listo para el turno de patrulla.";
         }
-
-
     }
 
     public String getPatru() {

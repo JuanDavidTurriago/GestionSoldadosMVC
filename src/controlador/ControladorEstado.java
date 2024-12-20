@@ -81,8 +81,5 @@ public class ControladorEstado {
         } else {
             JOptionPane.showMessageDialog(null, "ID no encontrado.");
         }
-
-
     }
-
 }

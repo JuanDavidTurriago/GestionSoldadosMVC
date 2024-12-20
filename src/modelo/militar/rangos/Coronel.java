@@ -54,8 +54,6 @@ public class Coronel extends Rango {
         }else{
             salu = "Coronel, asegúrese de que todas las unidades estén en posición.";
         }
-
-
     }
 
     public String getPatru() {

@@ -14,16 +14,6 @@ public class Soldado {
         this.rango = rango;
     }
 
-    public void mostrarInformacion(String nombre, String id, String rango){
-
-            System.out.println("Nombre: " + nombre);
-            System.out.println("ID: " + id);
-            System.out.println("Rango: " + rango);
-    }
-
-
-
-
     public String regañado(String rango) {
 
         if (rango.equals("Soldado")) {

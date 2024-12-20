@@ -8,10 +8,8 @@ import java.util.ArrayList;
 
 public class VentanaPrincipal extends javax.swing.JFrame {
 
-
     public VentanaPrincipal() {
-        initComponents();
-    }
+        initComponents();    }
 
     private void initComponents() {
 
@@ -20,7 +18,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jComboBoxRango = new javax.swing.JComboBox<>();
         jPanel2 = new javax.swing.JPanel();
-        jScrollBar1 = new javax.swing.JScrollBar();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jPanelPrincipal = new javax.swing.JPanel();
@@ -83,7 +80,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         JTextArea areaSoldado = new javax.swing.JTextArea();
         areaSoldado.setEditable(false);
 
-
         jPanel3.setBackground(new java.awt.Color(102, 0, 102));
 
         jLabel3.setBackground(new java.awt.Color(153, 0, 102));
@@ -108,19 +104,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18));
         jLabel4.setText("¡Bienvenido!");
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 15));
         jLabel5.setText("En este programa podras Crear, modificar, y muchas cosas mas con los soldados.");
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 15));
         jLabel6.setText("Para empezar oprime alguno de los botones que se encuentran arriba ");
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 15));
         jLabel7.setText("de este texto.");
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18));
         jLabel8.setText("¡Buena suerte!");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -239,7 +235,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                                                 .addGap(15, 15, 15))
                                         .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
-
         pack();
     }
 
@@ -335,7 +330,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 break;
             case "Teniente":
 
-                for (String[] datos : listaTenientes) {//
+                for (String[] datos : listaTenientes) {
 
                     JLabel label = new JLabel("ID: "+datos[0]+"      Nombre: "+datos[1]);
                     JLabel lab = new JLabel("Misión: "+datos[2]+"      Estado: "+datos[3]);
@@ -410,6 +405,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jButtonAcciones.setActionCommand("Acciones");
         jButtonAcciones.addActionListener(controlador);
 
+        jButtonResetAll.setActionCommand("RESET ALL");
+        jButtonResetAll.addActionListener(controlador);
+
         jComboBoxRango.setActionCommand("Rango");
         jComboBoxRango.addActionListener(controlador);
 
@@ -435,5 +433,4 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JScrollBar jScrollBar1;
 }
